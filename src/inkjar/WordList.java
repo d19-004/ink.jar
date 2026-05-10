@@ -40,4 +40,34 @@ public class WordList {
         if (pool.isEmpty()) return from.get((int) (Math.random() * from.size()));
         return pool.get((int) (Math.random() * pool.size()));
     }
+
+    public static String pick(List<String> exclude) {
+        return randomWord(getWordList(), exclude);
+    }
+
+    public static String blankHint(String word) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < word.length(); i++) {
+            if (sb.length() > 0) sb.append(' ');
+            sb.append(word.charAt(i) == ' ' ? ' ' : '_');
+        }
+        return sb.toString();
+    }
+
+    public static String partialHint(String word) {
+        ArrayList<Integer> indexes = new ArrayList<>();
+        for (int i = 0; i < word.length(); i++) {
+            if (word.charAt(i) != ' ') indexes.add(i);
+        }
+        if (indexes.isEmpty()) return blankHint(word);
+
+        int reveal = indexes.get((int) (Math.random() * indexes.size()));
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < word.length(); i++) {
+            if (sb.length() > 0) sb.append(' ');
+            char c = word.charAt(i);
+            sb.append(c == ' ' ? ' ' : (i == reveal ? c : '_'));
+        }
+        return sb.toString();
+    }
 }
