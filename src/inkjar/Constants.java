@@ -1,4 +1,4 @@
-package client;
+package inkjar;
 
 public interface Constants {
     int PORT = 9876;

@@ -1,4 +1,4 @@
-package client;
+package inkjar;
 
 import javax.swing.*;
 import javax.swing.UIManager;

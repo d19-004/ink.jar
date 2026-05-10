@@ -1,4 +1,4 @@
-package client;
+package inkjar;
 
 import java.net.InetAddress;
 
