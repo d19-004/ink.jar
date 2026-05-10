@@ -41,7 +41,7 @@ public class Game {
         this.playerName = playerName;
         this.engine     = new GameEngine(playerName, DEFAULT_ROUNDS);
 
-        frame = new JFrame("Skribbl – Single Player  |  " + playerName);
+        frame = new JFrame("ink.jar  |  " + playerName);
         frame.setSize(WIDTH, HEIGHT);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
@@ -68,7 +68,7 @@ public class Game {
         panel.setPreferredSize(new Dimension(WIDTH / 6, HEIGHT));
         panel.setBorder(BorderFactory.createEmptyBorder(10, 8, 10, 8));
 
-        JLabel title = new JLabel("Skribbl");
+        JLabel title = new JLabel("ink.jar");
         title.setFont(title.getFont().deriveFont(Font.BOLD, 22f));
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
 
